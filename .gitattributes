@@ -1,2 +1,33 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+double a, b;
+char op;
+string input;
+cout << "Enter Any Operator(+ ,_ ,* , /):";
+cin >> op;
+cout << "Enter 1st Operand: "<< endl;
+cin >> a;
+cout << "Enter 2nd Operand: "<< endl;
+cin >> b;
+getline(cin, input);
+op = !input.empty() ? input[0] : '+'; //If operator is empty Default operation will be '+'. 
+switch(op) {
+        case '+':
+            cout << a << " + " << b << " = " << (a + b) << endl;
+            break;
+        case '-':
+            cout << a << " - " << b << " = " << (a - b) << endl;
+            break;
+        case '*':
+            cout << a << " * " << b << " = " << (a * b) << endl;
+            break;
+        case '/':
+            cout << a << " / " << b << " = " << (a / b) << endl;
+            break;
+        default:
+            cout << "Invalid operator entered." << endl;
+    }
+return 0;
+}
